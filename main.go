@@ -17,7 +17,6 @@ func main() {
 		//res := &response{Message: "Hello World"}
 		
 		res:= http.FileServer(http.Dir("static"))
-		
 		http.Handle("/", res)
 
 		for _, e := range os.Environ() {
