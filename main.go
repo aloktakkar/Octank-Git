@@ -19,14 +19,14 @@ func main() {
 		res:= http.FileServer(http.Dir("static"))
 		http.Handle("/", res)
 
-		for _, e := range os.Environ() {
+		/*for _, e := range os.Environ() {
 			pair := strings.Split(e, "=")
 			res.EnvVars = append(res.EnvVars, pair[0]+"="+pair[1])
 		}
 
 		for i := 1; i <= 90; i++ {
 			res.Fib = append(res.Fib, f())
-		}
+		}*/
 
 		// Beautify the JSON output
 		out, _ := json.MarshalIndent(res, "", "  ")
